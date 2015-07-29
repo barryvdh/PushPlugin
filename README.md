@@ -433,7 +433,7 @@ function onNotification(e) {
 	case 'message':
 		// if this flag is set, this notification happened while we were in the foreground.
 		// you might want to play a sound to get the user's attention, throw up a dialog, etc.
-		if ( e.foreground )
+		if ( e.foreground == true )
 		{
 			$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
 
@@ -446,7 +446,7 @@ function onNotification(e) {
 		}
 		else
 		{  // otherwise we were launched because the user touched a notification in the notification tray.
-			if ( e.coldstart )
+			if ( e.coldstart == true )
 			{
 				$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
 			}
